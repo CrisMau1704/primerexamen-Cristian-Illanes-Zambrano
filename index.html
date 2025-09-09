@@ -22,6 +22,9 @@
     <header class="header">
       <nav class="nav" aria-label="Menú principal">
         <a href="#logo" class="logo">MANACO</a>
+        <button class="menu-toggle" aria-expanded="false"  aria-controls="menu" aria-label="Abrir menú">
+          ☰
+        </button>
         <ul class="nav__list">
           <li><a href="#Inicio">Inicio</a></li>
           <li><a href="#Servicios">Servicios</a></li>
@@ -66,4 +69,12 @@
       <p>Copyright 2025 MANACO</p>
     </footer>
   </body>
+
+  <script>
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+    });
+  </script>
 </html>
